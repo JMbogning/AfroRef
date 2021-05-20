@@ -13,17 +13,44 @@ import {
 } from 'react-native';
 
 import SplashScreen from 'react-native-splash-screen';
+import Step from './Screens/Step';
+import storage from './api/storage'
 
-class App extends React.Component{
+class App extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      first: false
+    }
+  }
+  
+
   componentDidMount() {
     // do stuff while splash screen is shown
-      // After having done stuff (such as async tasks) hide the splash screen
-      SplashScreen.hide();
-      
+    // After having done stuff (such as async tasks) hide the splash screen
+    SplashScreen.hide();
+    var first = storage.load({
+      key:'loginState'
+    }).then(data =>{
+      this.setState({ first: data })
+
+    }).catch(e=>{
+      this.setState({ first: {isLog:false} })
+    })
+
+    
+
+
+
   }
-  render(){
+
+  render() {
+   
     return <View>
-      <Text>Hello</Text>
+     
+      {
+         this.state.first.isLog ? <Text>old runing</Text>:<Step />
+      }
     </View>
   }
 }
