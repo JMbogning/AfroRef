@@ -10,8 +10,7 @@
 
     <ImageView
         android:layout_width="match_parent"
-        android:layout_height="105dp"
-        android:alpha="200"
+        android:layout_height="234dp"
 
         android:contentDescription="@string/logo"
         android:scaleType="centerCrop"
@@ -21,7 +20,7 @@
         android:id="@+id/progressBar6"
         style="@android:style/Widget.ProgressBar"
         android:layout_width="match_parent"
-        android:layout_height="230dp"
+        android:layout_height="71dp"
         android:backgroundTint="#000000" />
 
     <TextView
