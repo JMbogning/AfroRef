@@ -7,14 +7,12 @@
  */
 
 import React from 'react';
-import {
-  Text,
-} from 'react-native';
 
 import SplashScreen from 'react-native-splash-screen';
 import Step from './Screens/Step';
 import storage from './api/storage'
 import { SafeAreaProvider } from 'react-native-safe-area-context';
+import Main from './Screens/Main';
 
 class App extends React.Component {
   constructor(props) {
@@ -55,7 +53,7 @@ class App extends React.Component {
     return <SafeAreaProvider style={{ flex: 1}}>
      
       {
-         this.state.first ? <Text>old runing</Text>:<Step setLog ={this.setLog}/>
+         this.state.first ? <Main />:<Step setLog ={this.setLog}/>
       }
     </SafeAreaProvider>
   }
