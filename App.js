@@ -46,7 +46,7 @@ class App extends React.Component {
 
   render() {
    
-    return <View>
+    return <View style={{ flex: 1}}>
      
       {
          this.state.first.isLog ? <Text>old runing</Text>:<Step />
