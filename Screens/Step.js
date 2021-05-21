@@ -1,22 +1,39 @@
 import React from 'react'
-import { Text, View, StyleSheet, Image } from 'react-native'
-import { TouchableOpacity } from 'react-native-gesture-handler'
+import { Text, View, Image, TouchableOpacity } from 'react-native'
 import data from '../api/stepperData'
+import styles from '../api/stepperStyle'
+import storage from '../api/storage'
 export default class Step extends React.Component {
-    constructor(props){
+    constructor(props) {
         super(props)
         this.state = {
             title: data[0].title,
             text: data[0].text,
-            image: data[0].image
+            image: data[0].image,
+            current: 0
         }
+        this._next = this._next.bind(this)
     }
-    render(){
+    _next() {
+        let current = this.state.current + 1;
+        console.log('press')
+        if (current < data.length) {
+            this.setState({ title: data[current].title })
+            this.setState({ text: data[current].text })
+            this.setState({ image: data[current].image })
+            this.setState({ current: current })
+        } else {
+
+            this.props.setLog()
+        }
+
+    }
+    render() {
         return <View style={styles.main}>
             <View style={styles.imageBox}>
                 <Image
-                source={this.state.image}
-                style={styles.image}
+                    source={this.state.image}
+                    style={styles.image}
                 />
             </View>
             <View style={styles.bottomBox}>
@@ -28,12 +45,12 @@ export default class Step extends React.Component {
                 </Text>
                 <View style={styles.indicator}>
                     <View style={styles.indicatorBtnGroup}>
-                        <Text style={styles.current}></Text>
-                        <Text style={styles.indicatorBtn}></Text>
-                        <Text style={styles.indicatorBtn}></Text>
+                        <Text style={this.state.current == 0?styles.current:styles.indicatorBtn}></Text>
+                        <Text style={this.state.current == 1?styles.current:styles.indicatorBtn}></Text>
+                        <Text style={this.state.current == 2?styles.current:styles.indicatorBtn}></Text>
                     </View>
                     <View style={styles.indicatorBtnNext}>
-                        <TouchableOpacity style={styles.btn}>
+                        <TouchableOpacity style={styles.btn} onPress={this._next} >
                             <Text>
                                 Suivants
                             </Text>
@@ -43,69 +60,5 @@ export default class Step extends React.Component {
             </View>
         </View>
     }
-} 
+}
 
-const styles = StyleSheet.create({
-    main:{
-        flex:1
-    },
-    imageBox:{
-        backgroundColor: 'yellow',
-        flex:1/2
-    },
-    image:{
-        width: '100%',
-        height: '100%'
-    },
-    bottomBox:{
-        flex: 1/2,
-        paddingTop: 15
-    },
-    title:{
-        textAlign: 'center',
-        flex: 1/4,
-        fontSize: 30,
-        fontWeight: 'bold',
-        
-    },
-    text:{
-        flex: 2/4,
-        textAlign:'center',
-        fontWeight: 'bold',
-        fontSize: 18
-    },
-    indicator:{
-        flex: 1/4,
-        flexDirection: 'row',
-    },
-    indicatorBtnGroup:{
-        flex: 1/2,
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        paddingLeft:10
-    },
-    indicatorBtn:{
-        width:20,
-        height:20,
-        borderRadius: 10,
-        backgroundColor:'#ffff00'
-    },
-    indicatorBtnNext:{
-        flex: 1/2,
-    },
-    btn:{
-        width: '70%',
-        height: 50,
-        backgroundColor:'#ffff00',
-        borderRadius: 20,
-        justifyContent: 'center',
-        alignItems:'center',
-        marginLeft: '26%'
-    },
-    current:{
-        width:40,
-        height:20,
-        borderRadius: 10,
-        backgroundColor:'#ffff00'
-    }
-})

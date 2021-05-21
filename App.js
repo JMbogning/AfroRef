@@ -20,8 +20,9 @@ class App extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      first: false
+      first: null
     }
+    this.setLog = this.setLog.bind(this)
   }
   
 
@@ -32,24 +33,29 @@ class App extends React.Component {
     var first = storage.load({
       key:'loginState'
     }).then(data =>{
-      this.setState({ first: data })
+      console.log(data)
+      this.setState(data)
 
     }).catch(e=>{
-      this.setState({ first: {isLog:false} })
     })
-
-    
-
-
 
   }
 
+  setLog(){
+    storage.save({
+      key: 'loginState', // Note: Do not use underscore("_") in key!
+      data: {
+          first: true
+      }
+    });
+    this.setState({ first: {isLog:true} })
+  }
   render() {
    
     return <SafeAreaProvider style={{ flex: 1}}>
      
       {
-         this.state.first.isLog ? <Text>old runing</Text>:<Step />
+         this.state.first ? <Text>old runing</Text>:<Step setLog ={this.setLog}/>
       }
     </SafeAreaProvider>
   }
