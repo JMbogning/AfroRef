@@ -25,7 +25,7 @@ style={{
     horizontal={true}
 >
     {
-        [1, 2, 3].map((v, k) => <Card key={k} />)
+        [1, 2, 3].map((v, k) => <Card key={k}  {...props}/>)
     }
 
 </ScrollView>

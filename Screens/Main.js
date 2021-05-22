@@ -2,7 +2,7 @@ import React from 'react'
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import { Icon } from 'react-native-elements';
-import Home from './Home';
+import Pricipal from './Principal';
 import Mape from './Map';
 import Likes from './Likes';
 import Add from './Add';
@@ -18,7 +18,7 @@ const Main = (props) => {
             activeTintColor: color.primary
         }}
         >
-            <Tab.Screen name={'Home'} component={Home} options={{
+            <Tab.Screen name={'pricipal'} component={Pricipal} options={{
                 tabBarIcon:(props)=><Icon name={'home'} 
                 color={props.color}
                 />

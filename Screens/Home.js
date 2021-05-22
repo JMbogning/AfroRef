@@ -38,10 +38,9 @@ const Home = (props) => {
            flex:1,
        }}
        >
-           <SavePI />
-           <SavePI />
+           <SavePI {...props} />
+           <SavePI {...props}/>
        </ScrollView>
     </View>)
 }
-
 export default Home
