@@ -66,21 +66,31 @@ const Card = (props) => {
                 >
                     <TouchableOpacity
                         style={{
-                            backgroundColor: color.primary,
-                            width: 90,
-                            height: 30,
                             flex: 1,
                             alignItems: 'center',
                             justifyContent: 'center',
                             borderRadius: 15,
                         }}
                     >
+                        <View
+                            style={{
+                                backgroundColor: color.primary,
+                                width: 90,
+                                height: 30,
+                                flex: 1,
+                                alignItems: 'center',
+                                justifyContent: 'center',
+                                borderRadius: 15,
+                            }}
+                        >
                         <Text
                             style={{
                                 color: '#FFF',
                                 fontWeight: 'bold',
                             }}
                         >Restaurant</Text>
+                        </View>
+                        
                     </TouchableOpacity>
                 </View>
             </View>

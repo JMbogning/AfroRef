@@ -3,7 +3,7 @@ import { Text, View, ScrollView } from 'react-native'
 import Card from '../Components/Card'
 const SavePI = (props)=> <View
 style={{
-    flex: 1 / 2
+    flex: 2 /3 
 }}
 >
 <Text
@@ -12,14 +12,14 @@ style={{
         fontWeight: 'bold',
         marginTop: 10,
         marginBottom: 5,
-        marginLeft: 10
+        marginLeft: 10,
     }}
 >Vos dernier PI enregistrer</Text>
 <ScrollView
     style={{
         paddingLeft: 10,
         width: '100%',
-        height: 170,
+        height: 190,
         flex: 1
     }}
     horizontal={true}
