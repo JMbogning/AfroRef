@@ -9,7 +9,15 @@ export default class Home extends React.Component {
     constructor(props){
         super(props)
         this.state = {
-            search: ''
+            search: '',
+            islog: false
+        }
+    }
+
+    componentDidMount(){
+        //console.log(this.props)
+        if (!this.state.islog) {
+          // this.props.navigation.navigate("login")
         }
     }
 
@@ -44,6 +52,7 @@ export default class Home extends React.Component {
                 value={this.state.search}
                 onChange={(value)=>{this.setState({search:value})}}
             />
+
            <ScrollView
            style={{
                flex:1,

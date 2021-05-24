@@ -1,11 +1,11 @@
 import React from 'react'
-import { Text, View, ScrollView, TouchableOpacity } from 'react-native'
-import { Header, SearchBar, Image, Icon } from 'react-native-elements'
+import { Text, View, TouchableOpacity } from 'react-native'
+import {  Image, Icon } from 'react-native-elements'
 import { TouchableWithoutFeedback } from 'react-native-gesture-handler'
-import color from '../Components/color'
+import color from './color'
 
 
-const Card = (props) => {
+const CardCustum = (props) => {
     return (
         <TouchableWithoutFeedback
             style={{
@@ -19,7 +19,8 @@ const Card = (props) => {
             }}
 
             onPress={()=>{
-                props.navigation.navigate('Details')
+                console.log(props)
+                //props.navigation.navigate('Details')
             }}
         >
             <View
@@ -33,7 +34,7 @@ const Card = (props) => {
             >
                 <Image
                     source={{
-                        uri: 'https://via.placeholder.com/400',
+                        uri: 'https://via.placeholder.com/300',
                         cache: 'only-if-cached'
                     }}
                     style={{ width: 340, height: '100%' }}
@@ -98,4 +99,4 @@ const Card = (props) => {
     );
 }
 
-export default Card;
+export default CardCustum;

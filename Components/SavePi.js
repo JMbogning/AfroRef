@@ -1,6 +1,6 @@
 import React from 'react'
 import { Text, View, ScrollView } from 'react-native'
-import Card from '../Components/Card'
+import CardCustum from './CardCustum'
 const SavePI = (props)=> <View
 style={{
     flex: 2 /3 
@@ -25,7 +25,7 @@ style={{
     horizontal={true}
 >
     {
-        [1, 2, 3].map((v, k) => <Card key={k}  {...props}/>)
+        [1, 2, 3].map((v, k) => <CardCustum key={k}  {...props}/>)
     }
 
 </ScrollView>
