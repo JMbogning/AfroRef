@@ -34,10 +34,11 @@ const CardCustum = (props) => {
             >
                 <Image
                     source={{
-                        uri: 'https://via.placeholder.com/300',
+                        uri: 'https://media-cdn.tripadvisor.com/media/photo-s/07/da/28/b1/jdw-design-hotel.jpg',
                         cache: 'only-if-cached'
                     }}
                     style={{ width: 340, height: '100%' }}
+                    defaultSource={require('../assets/map.jpg')}
                 />
             </View>
             <View

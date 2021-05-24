@@ -1,30 +1,9 @@
 import React from 'react'
 import { ScrollView, Text, View } from 'react-native'
-import { Card, Header, Button, Icon, Image } from 'react-native-elements'
-import CardCustum from '../Components/CardCustum'
+import { Header, Icon, Image } from 'react-native-elements'
+import CardResto from '../Components/CardResto'
 import color from '../Components/color'
 
-const LikesCard = (props) => {
-    return <Card>
-        <Card.Image source={{ uri: 'https://via.placeholder.com/300' }} />
-        <Card.FeaturedTitle>
-            <View>
-                <Icon name="room" />
-            </View>
-            <View>
-                <Text style={{
-                    fontWeight: 'bold'
-                }}>Restaurant la paix</Text>
-                <Text
-                    style={{
-                        color: color.primary
-                    }}
-                >1er Rue de la gare<Text style={{ color: 'red' }}>(1.5Km)</Text></Text>
-            </View>
-        </Card.FeaturedTitle>
-
-    </Card>
-}
 
 const Likes = (props) => {
     return (
@@ -74,7 +53,7 @@ const Likes = (props) => {
             >
 
                 {
-                    [1, 2, 3, 4].map((k, v) => <LikesCard key={k} />)
+                    [1, 2, 3, 4].map((k, v) => <CardResto key={k} />)
                 }
             </ScrollView>
         </>

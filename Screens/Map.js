@@ -1,6 +1,7 @@
 import React from 'react'
 import { ScrollView, Text, View } from 'react-native'
-import { Header, Image, SearchBar } from 'react-native-elements'
+import { Header, Icon, Image, SearchBar } from 'react-native-elements'
+import CardResto from '../Components/CardResto'
 import color from '../Components/color'
 
 export default class Mape extends React.Component{
@@ -14,6 +15,7 @@ export default class Mape extends React.Component{
     render(){
         return (<View style={{ 
             flex:1,
+            backgroundColor: color.bacground
          }}>
            <Header
                     statusBarProps={{ backgroundColor: color.primary }}
@@ -43,11 +45,32 @@ export default class Mape extends React.Component{
                     value={this.state.search}
                     onChange={(value)=>{this.setState({search:value})}}
                 />
-
+                <View
+                style={{
+                   
+                }}
+                >
+                    <Icon name='tune' 
+                    style={{
+                        padding:2,
+                        backgroundColor:'#fff',
+                        width:35,
+                        borderRadius:15
+                    }}
+                    />
+                    <Text>Pertinance</Text>
+                </View>
                 <ScrollView>
                     <Image 
-                    source={{ uri: }}
+                    source={require('../assets/map.jpg')}
+                    style={{
+                        height:200,
+                        margin:10
+                    }}
                     />
+                     {
+                    [1, 2, 3, 4].map((k, v) => <CardResto key={k} />)
+                }
                 </ScrollView>
         </View>)
     }
