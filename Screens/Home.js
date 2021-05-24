@@ -17,7 +17,7 @@ export default class Home extends React.Component {
     componentDidMount(){
         //console.log(this.props)
         if (!this.state.islog) {
-          // this.props.navigation.navigate("login")
+          this.props.navigation.navigate("login")
         }
     }
 
