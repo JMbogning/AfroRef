@@ -19,8 +19,8 @@ const CardCustum = (props) => {
             }}
 
             onPress={()=>{
-                console.log(props)
-                //props.navigation.navigate('Details')
+                //console.log(props)
+                props.navigation.navigate('Details')
             }}
         >
             <View
