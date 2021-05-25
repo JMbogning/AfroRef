@@ -60,7 +60,7 @@ export default class Main extends React.Component {
 
     render() {
         return (<Drawer.Navigator
-            drawerContent={()=><Content {...this.props} />}
+            drawerContent={(props)=><Content {...props} />}
         >
             <Drawer.Screen name="home" component={TabNav} />
         </Drawer.Navigator>)
