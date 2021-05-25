@@ -11,7 +11,8 @@ const Details = (props) => {
         }}
     >
         <Header
-            leftComponent={{ icon: 'arrow-back', color: '#fff' }}
+            //leftComponent={{ icon: 'arrow-back', color: '#fff' }}
+            leftComponent={<Icon name='arrow-back' color='#fff' onPress={()=>{props.navigation.goBack()}} />}
             centerComponent={{ text: 'Restaurant le salut -Details', style: { color: '#fff' } }}
             containerStyle={{
                 backgroundColor: color.primary,
