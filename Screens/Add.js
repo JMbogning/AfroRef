@@ -1,6 +1,6 @@
 import React from 'react'
 import { ScrollView, Text, View } from 'react-native'
-import { Input, Header, Image } from 'react-native-elements'
+import { Input, Header, Image, Icon } from 'react-native-elements'
 import color from '../Components/color'
 
 const Add = (props) => {
@@ -14,6 +14,7 @@ const Add = (props) => {
                     backgroundColor: color.primary,
                     justifyContent: 'space-around',
                 }}
+                leftComponent={<Icon name='menu' color='#fff'  onPress={()=>{this.props.navigation.toggleDrawer()}}  />}
                 centerComponent={{ text: 'Accuille', style: { color: '#fff' } }}
                 rightComponent={<Image source={require('../assets/logo.png')}
                     style={{

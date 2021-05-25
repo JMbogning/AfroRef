@@ -24,6 +24,7 @@ export default class Mape extends React.Component{
                         backgroundColor: color.primary,
                         justifyContent: 'space-around',
                     }}
+                    leftComponent={<Icon name='menu' color='#fff'  onPress={()=>{this.props.navigation.toggleDrawer()}}  />}
                     centerComponent={{ text: 'Accuille', style: { color: '#fff' } }}
                     rightComponent={<Image source={require('../assets/logo.png')}
                         style={{
