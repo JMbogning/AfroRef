@@ -48,7 +48,6 @@ export default class Login extends React.Component {
                     }}
                     onPress={()=>{
                         this.props.navigation.navigate('Home',{'log':true})
-                        console.log(this.props.navigation)
                     }}
                     />
                     <Text

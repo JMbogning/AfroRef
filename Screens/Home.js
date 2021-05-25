@@ -1,6 +1,7 @@
 import React from 'react'
 import {  ScrollView, View } from 'react-native'
 import { Header, SearchBar, Image } from 'react-native-elements'
+import { Icon } from 'react-native-elements/dist/icons/Icon'
 import color from '../Components/color'
 import SavePI from '../Components/SavePi'
 
@@ -30,7 +31,7 @@ export default class Home extends React.Component {
                     backgroundColor: color.primary,
                     justifyContent: 'space-around',
                 }}
-                leftComponent={{ icon: 'menu', color: '#fff' }}
+                leftComponent={<Icon name='menu' color='#fff'   />}
                 centerComponent={{ text: 'Accuille', style: { color: '#fff' } }}
                 rightComponent={<Image source={require('../assets/logo.png')}
                     style={{

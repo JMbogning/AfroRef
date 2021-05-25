@@ -13,6 +13,7 @@ import Step from './Screens/Step';
 import storage from './api/storage'
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import Main from './Screens/Main';
+import { NavigationContainer } from '@react-navigation/native';
 
 class App extends React.Component {
   constructor(props) {
@@ -51,10 +52,12 @@ class App extends React.Component {
   render() {
    
     return <SafeAreaProvider style={{ flex: 1}}>
+      <NavigationContainer>
      
       {
          this.state.first ? <Main />:<Step setLog ={this.setLog}/>
       }
+      </NavigationContainer>
     </SafeAreaProvider>
   }
 }
