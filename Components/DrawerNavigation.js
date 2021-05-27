@@ -69,13 +69,11 @@ class Content extends React.Component {
                     }}
                 >
                     <Image
-                        source={require('../assets/af.jpg')}
+                        source={require('../assets/logoTop.png')}
                         style={{
                             width: 100,
                             height: 100,
-                            borderRadius: 50,
-                            borderColor: color.primary,
-                            borderWidth: 1,
+                            borderRadius: 50
                         }}
                     />
                     <Text
