@@ -22,7 +22,7 @@ export default class Login extends React.Component {
                 }}
                 >
                     <Image
-                        source={require('../assets/af.jpg')}
+                        source={require('../assets/logoTop.png')}
                         style={{
                             height: 100,
                             resizeMode: 'contain'

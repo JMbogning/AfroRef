@@ -57,7 +57,6 @@ class Content extends React.Component {
     }
 
     render() {
-        { console.log(this.props.state.routeNames) }
         return (
             <DrawerContentScrollView
                 {...this.props}
