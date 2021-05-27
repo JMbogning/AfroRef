@@ -15,7 +15,7 @@ const Add = (props) => {
                     justifyContent: 'space-around',
                 }}
                 leftComponent={<Icon name='menu' color='#fff'  onPress={()=>{props.navigation.toggleDrawer()}}  />}
-                centerComponent={{ text: 'Ajouter un centre interet d\'interet', style: { color: '#fff' } }}
+                centerComponent={{ text: 'Ajouter un centre d\'interet', style: { color: '#fff' } }}
                 rightComponent={<Image source={require('../assets/logo.png')}
                     style={{
                         width: 100,
