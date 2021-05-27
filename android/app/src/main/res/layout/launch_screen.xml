@@ -4,47 +4,27 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:alpha="1"
-    android:background="@drawable/backround"
-    android:backgroundTintMode="src_atop"
+    android:background="#FFFFFF"
+    android:gravity="center"
     android:orientation="vertical">
 
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="105dp"
-        android:alpha="200"
 
-        android:contentDescription="@string/logo"
-        android:scaleType="centerCrop"
-        android:src="@drawable/logo" />
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="match_parent"
+        android:layout_height="237dp"
+        android:contentDescription="@string/app_name"
+        android:src="@drawable/afroref_logo"
+        app:srcCompat="@drawable/afroref_logo" />
 
     <pl.droidsonroids.gif.GifImageView
         android:id="@+id/imageView"
-        android:layout_width="match_parent"
-        android:layout_height="215dp"
+        android:layout_width="401dp"
+        android:layout_height="68dp"
         android:layout_marginTop="20dp"
-        app:srcCompat="@drawable/animation"
         android:contentDescription="@string/loading"
         android:src="@drawable/animation"
-        />
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:fontFamily="sans-serif-condensed-medium"
-        android:gravity="center"
-        android:text="@string/load"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:textSize="48sp"
-        android:textStyle="bold" />
-
-    <ProgressBar
-        android:id="@+id/progressBar7"
-        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="96dp"
-        android:backgroundTint="#000"
-        android:indeterminate="true" />
+        app:srcCompat="@drawable/animation" />
 
 
 </LinearLayout>
