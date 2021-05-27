@@ -1,5 +1,5 @@
 import React from 'react'
-import { ScrollView, View, Text } from 'react-native'
+import { ScrollView, View, Text, TouchableOpacity, Linking } from 'react-native'
 import { Header, Button, Image } from 'react-native-elements'
 import { Icon } from 'react-native-elements/dist/icons/Icon'
 import color from '../Components/color'
@@ -87,7 +87,7 @@ const Details = (props) => {
                     justifyContent: 'space-between'
                 }}
             >
-                <View
+                <TouchableOpacity
                     style={{
                         flex: 1 / 2,
                         flexDirection: 'row',
@@ -97,9 +97,10 @@ const Details = (props) => {
                         alignItems: 'center',
                         borderRadius: 10
                     }}
+                    onPress={function (){Linking.openURL('tel:0033000009')}}
                 >
                     <Icon name='call' style={{ marginRight: 5 }} color='#FFF' /><Text style={{ color: '#fff' }} >00 33 00 00 09</Text>
-                </View>
+                </TouchableOpacity>
                 <Icon name='favorite-border' color={color.primary} />
             </View>
             <View
