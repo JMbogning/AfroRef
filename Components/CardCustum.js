@@ -26,7 +26,7 @@ const CardCustum = (props) => {
             <View
                 style={{
                     flex: 2,
-                    paddingTop: 5,
+                    paddingTop: 20,
                     paddingLeft: 10,
                     paddingRight: 10,
                     marginBottom: 2
