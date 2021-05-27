@@ -3,6 +3,7 @@ import { View } from 'react-native'
 import { Icon, Image, Text } from 'react-native-elements'
 import { DrawerContentScrollView, DrawerItem, DrawerItemList } from '@react-navigation/drawer'
 import color from './color'
+import { TouchableOpacity } from 'react-native'
 
 class Content extends React.Component {
     constructor(props){
@@ -43,12 +44,13 @@ class Content extends React.Component {
                         }}
                     >janet@jackson.com</Text>
                 </View>
-                <DrawerItem
-                    label='home'
-                    icon={({ color, size }) => <Icon name='home' color={color} size={size} />}
-                    activeTintColor={color.primary}
-                    onPress={()=>{ this.props.navigation.navigate('Home')}}
-                />
+                    <DrawerItem
+                        label='home'
+                        icon={({ color, size }) => <Icon name='home' color={color} size={size} />}
+                        activeTintColor={color.primary}
+                        onPress={()=>{ this.props.navigation.navigate('Home')}}
+                    />
+                
                 <DrawerItem
                     label='Map'
                     icon={({ color, size }) => <Icon name='room' color={color} size={size} />}

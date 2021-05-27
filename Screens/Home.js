@@ -32,7 +32,7 @@ export default class Home extends React.Component {
                     justifyContent: 'space-around',
                 }}
                 leftComponent={<Icon name='menu' color='#fff'  onPress={()=>{this.props.navigation.toggleDrawer()}}  />}
-                centerComponent={{ text: 'Accuille', style: { color: '#fff' } }}
+                centerComponent={{ text: 'Accueil', style: { color: '#fff' } }}
                 rightComponent={<Image source={require('../assets/logo.png')}
                     style={{
                         width: 100,
