@@ -7,10 +7,8 @@ import Mape from './Map';
 import Favoris from './Favoris';
 import Add from './Add';
 import color from '../Components/color'
-import Login from './Login';
 import { createDrawerNavigator } from '@react-navigation/drawer'
 import Content from '../Components/DrawerNavigation';
-import Home from './Home';
 
 const Tab = createBottomTabNavigator();
 const Drawer = createDrawerNavigator()
@@ -21,7 +19,7 @@ const TabNav = (props) => <Tab.Navigator
     }}
     {...props}
 >
-    <Tab.Screen name={'pricipal'} component={Pricipal} options={{
+    <Tab.Screen name={'Home'} component={Pricipal} options={{
         tabBarIcon: (props) => <Icon name={'home'}
             color={props.color}
         />
@@ -62,7 +60,7 @@ export default class Main extends React.Component {
         return (<Drawer.Navigator
             drawerContent={(props)=><Content {...props} />}
         >
-            <Drawer.Screen name="home" component={TabNav} />
+            <Drawer.Screen name="Main" component={TabNav} />
         </Drawer.Navigator>)
     }
 }

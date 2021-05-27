@@ -6,11 +6,58 @@ import color from './color'
 import { TouchableOpacity } from 'react-native'
 
 class Content extends React.Component {
-    constructor(props){
+    constructor(props) {
         super(props)
+        this.state = {
+            activeHome: true,
+            activeMap: false,
+            activeFavorit: false,
+            activeAdd: false
+        }
+
+        this.activeHome = this.activeHome.bind(this)
+        this.activeAdd = this.activeAdd.bind(this)
+        this.activeMap = this.activeMap.bind(this)
+        this.activeFavorit = this.activeFavorit.bind(this)
+
+    }
+
+    activeHome() {
+        this.setState({
+            activeHome: true,
+            activeMap: false,
+            activeFavorit: false,
+            activeAdd: false
+        })
+
+    }
+    activeMap() {
+        this.setState({
+            activeHome: false,
+            activeMap: true,
+            activeFavorit: false,
+            activeAdd: false
+        })
+    }
+    activeFavorit() {
+        this.setState({
+            activeHome: false,
+            activeMap: false,
+            activeFavorit: true,
+            activeAdd: false
+        })
+    }
+    activeAdd() {
+        this.setState({
+            activeHome: false,
+            activeMap: false,
+            activeFavorit: false,
+            activeAdd: true
+        })
     }
 
     render() {
+        { console.log(this.props.state.routeNames) }
         return (
             <DrawerContentScrollView
                 {...this.props}
@@ -44,32 +91,40 @@ class Content extends React.Component {
                         }}
                     >janet@jackson.com</Text>
                 </View>
-                    <DrawerItem
-                        label='home'
-                        icon={({ color, size }) => <Icon name='home' color={color} size={size} />}
-                        activeTintColor={color.primary}
-                        onPress={()=>{ this.props.navigation.navigate('Home')}}
-                    />
-                
+                <DrawerItem
+                    label='home'
+                    icon={({ color, size }) => <Icon name='home' color={color} size={size} />}
+                    onPress={() => { this.props.navigation.navigate('Home'); this.activeHome() }}
+                    activeBackgroundColor={color.primary}
+                    activeTintColor='#fff'
+                    focused={this.state.activeHome}
+                    col
+                />
+
                 <DrawerItem
                     label='Map'
                     icon={({ color, size }) => <Icon name='room' color={color} size={size} />}
-                    activeTintColor={color.primary}
-                    onPress={()=>{ this.props.navigation.navigate('Map')}}
+                    onPress={() => { this.props.navigation.navigate('Map'); this.activeMap() }}
+                    activeBackgroundColor={color.primary}
+                    activeTintColor='#fff'
+                    focused={this.state.activeMap}
                 />
                 <DrawerItem
                     label='Favorite'
                     icon={({ color, size }) => <Icon name='favorite' color={color} size={size} />}
+                    onPress={() => { this.props.navigation.navigate('Favorite'); this.activeFavorit() }}
+                    activeBackgroundColor={color.primary}
+                    activeTintColor='#fff'
+                    focused={this.state.activeFavorit}
 
-                    activeTintColor={color.primary}
-                    onPress={()=>{ this.props.navigation.navigate('Favorite')}}
                 />
                 <DrawerItem
                     label='Add'
                     icon={({ color, size }) => <Icon name='add-circle' color={color} size={size} />}
-
-                    activeTintColor={color.primary}
-                    onPress={()=>{ this.props.navigation.navigate('Add')}}
+                    onPress={() => { this.props.navigation.navigate('Add'); this.activeAdd() }}
+                    activeBackgroundColor={color.primary}
+                    activeTintColor='#fff'
+                    focused={this.state.activeAdd}
                 />
             </DrawerContentScrollView>
         )
