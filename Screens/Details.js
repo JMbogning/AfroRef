@@ -107,11 +107,12 @@ const Details = (props) => {
                     padding: 10,
                     backgroundColor: '#fff',
                     borderRadius: 15,
-                    marginTop: 10
+                    marginTop: 10,
+                    marginBottom: 10
                 }}
             >
                 <Text>
-                    Un restaurant est un établissement de commerce où l'on sert des plats préparés et des ... Un restaurant dit « gastronomique » est un restaurant qui cherche à mettre la gastronomie à l'honneur : plats de qualité, cave honorable, accueil attentif, .
+                    Un restaurant est un établissement de commerce où l'on sert des plats préparés et des ... Un restaurant dit « gastronomique » est un restaurant qui cherche à mettre la gastronomie à l'honneur : plats de qualité, cave honorable, accueil attentif.
                 </Text>
             </View>
 

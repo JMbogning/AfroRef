@@ -15,8 +15,8 @@ const Likes = (props) => {
                     backgroundColor: color.primary,
                     justifyContent: 'space-around',
                 }}
-                leftComponent={<Icon name='menu' color='#fff'  onPress={()=>{this.props.navigation.toggleDrawer()}}  />}
-                centerComponent={{ text: 'Accuille', style: { color: '#fff' } }}
+                leftComponent={<Icon name='menu' color='#fff'  onPress={()=>{props.navigation.toggleDrawer()}}  />}
+                centerComponent={{ text: 'Favoris', style: { color: '#fff' } }}
                 rightComponent={<Image source={require('../assets/logo.png')}
                     style={{
                         width: 100,
@@ -40,7 +40,7 @@ const Likes = (props) => {
                         fontSize: 30
                     }}
                 >
-                    Vos PI favories <Icon name='favorite-border' color='red' />
+                    Vos PI favoris <Icon name='favorite-border' color='red' />
             </Text>
                 
             </View>

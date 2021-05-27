@@ -21,7 +21,7 @@ const CardResto = (props) => {
                     style={{
                         color: color.primary
                     }}
-                >1er Rue de la gare<Text style={{ color: 'red' }}>(1.5Km)</Text></Text>
+                >1er Rue de la gare<Text style={{ color: 'red' }}> (1.5Km) </Text></Text>
             </View>
         </Card.FeaturedTitle>
 

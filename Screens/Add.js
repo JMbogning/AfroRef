@@ -1,6 +1,6 @@
 import React from 'react'
 import { ScrollView, Text, View } from 'react-native'
-import { Input, Header, Image, Icon } from 'react-native-elements'
+import { Input, Header, Image, Icon, Button } from 'react-native-elements'
 import color from '../Components/color'
 
 const Add = (props) => {
@@ -15,7 +15,7 @@ const Add = (props) => {
                     justifyContent: 'space-around',
                 }}
                 leftComponent={<Icon name='menu' color='#fff'  onPress={()=>{props.navigation.toggleDrawer()}}  />}
-                centerComponent={{ text: 'Accuille', style: { color: '#fff' } }}
+                centerComponent={{ text: 'Ajouter un centre interet d\'interet', style: { color: '#fff' } }}
                 rightComponent={<Image source={require('../assets/logo.png')}
                     style={{
                         width: 100,
@@ -25,16 +25,11 @@ const Add = (props) => {
                 />}
             />
         <ScrollView
-        contentContainerStyle={{
-            padding: 20
-        }}
-        >
-            <Text
-            style={{
-                fontWeight:'bold',
-                fontSize:20
+            contentContainerStyle={{
+                padding: 20
             }}
-            >AROREF</Text>
+            >
+            
             <Text
             style={{
                 fontWeight:'bold',
@@ -50,12 +45,12 @@ const Add = (props) => {
             }}
             >Créer des point d'intéret pour que les autres utilisateurs de la plate forme puissent les retrouver facilement en quelque cliques</Text>
             <Input
-                placeholder="E-mail"
+                placeholder="Nom"
                 leftIcon={{ type: 'material', name: 'person' }}
                 rightIcon={{ type: 'material', name: 'done', color:color.primary }}
             />
             <Input
-                placeholder="Restaurant"
+                placeholder="Catégorie"
                 leftIcon={{ type: 'material', name: 'list' }}
                 rightIcon={{ type: 'material', name: 'expand-more' }}
             />
@@ -67,12 +62,54 @@ const Add = (props) => {
                 }}
             />
             <Input
+                placeholder="Adresse"
+                leftIcon={{ type: 'material', name: 'alternate-email' }}
+                inputContainerStyle={{
+                    height:80
+                }}
+            />
+            <Input
+                placeholder="Code postal"
+                leftIcon={{ type: 'material', name: 'local-post-office' }}
+                
+                inputContainerStyle={{
+                    height:80
+                }}
+            />
+            <Input
+                placeholder="Téléphone"
+                leftIcon={{ type: 'material', name: 'phone' }}
+                inputContainerStyle={{
+                    height:80
+                }}
+            />
+            <Input
+                placeholder="Pays"
+                leftIcon={{ type: 'material', name: 'flag' }}
+                rightIcon={{ type: 'material', name: 'expand-more' }}
+                inputContainerStyle={{
+                    height:80
+                }}
+            />
+            <Input
+                placeholder="Ville"
+                leftIcon={{ type: 'material', name: 'apartment' }}
+                rightIcon={{ type: 'material', name: 'expand-more' }}
+                inputContainerStyle={{
+                    height:80
+                }}
+            />
+            <Input
                 placeholder="Localisation"
-                leftIcon={{ type: 'material', name: 'location-city' }}
+                leftIcon={{ type: 'material', name: 'where-to-vote' }}
                 rightIcon={{ type: 'material', name: 'done', color:color.primary }}
+            />
+            <Button buttonStyle= {{ backgroundColor: color.primary }}
+                title="Valider"
             />
         </ScrollView>
     </View>)
+
 }
 
 export default Add

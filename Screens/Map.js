@@ -25,7 +25,7 @@ export default class Mape extends React.Component{
                         justifyContent: 'space-around',
                     }}
                     leftComponent={<Icon name='menu' color='#fff'  onPress={()=>{this.props.navigation.toggleDrawer()}}  />}
-                    centerComponent={{ text: 'Accuille', style: { color: '#fff' } }}
+                    centerComponent={{ text: 'Map', style: { color: '#fff' } }}
                     rightComponent={<Image source={require('../assets/logo.png')}
                         style={{
                             width: 100,
@@ -53,20 +53,20 @@ export default class Mape extends React.Component{
                 >
                     <Icon name='tune' 
                     style={{
-                        padding:2,
+                        marginLeft: 10,
                         backgroundColor:'#fff',
                         width:35,
                         borderRadius:15
                     }}
                     />
-                    <Text>Pertinance</Text>
+                    <Text style={{ marginLeft: 10 }}>Pertinance</Text>
                 </View>
                 <ScrollView>
                     <Image 
                     source={require('../assets/map.jpg')}
                     style={{
                         height:200,
-                        margin:10
+                        margin: 10
                     }}
                     />
                      {

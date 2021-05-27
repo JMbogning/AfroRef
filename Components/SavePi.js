@@ -14,7 +14,7 @@ style={{
         marginBottom: 5,
         marginLeft: 10,
     }}
->Vos dernier PI enregistrer</Text>
+>Vos derniers PI enregistrer</Text>
 <ScrollView
     style={{
         paddingLeft: 10,

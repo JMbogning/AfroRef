@@ -4,7 +4,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import { Icon } from 'react-native-elements';
 import Pricipal from './Principal';
 import Mape from './Map';
-import Likes from './Likes';
+import Favoris from './Favoris';
 import Add from './Add';
 import color from '../Components/color'
 import Login from './Login';
@@ -31,7 +31,7 @@ const TabNav = (props) => <Tab.Navigator
             color={props.color}
         />
     }} />
-    <Tab.Screen name={'Favorite'} component={Likes} options={{
+    <Tab.Screen name={'Favorite'} component={Favoris} options={{
         tabBarIcon: (props) => <Icon name={'favorite'}
             color={props.color}
         />

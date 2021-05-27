@@ -11,6 +11,7 @@ const CardCustum = (props) => {
             style={{
                 backgroundColor: '#FFF',
                 paddingLeft: 10,
+                paddingBottom: 15,
                 paddingRight: 10,
                 margin: 1,
                 marginRight: 10,
@@ -26,7 +27,7 @@ const CardCustum = (props) => {
             <View
                 style={{
                     flex: 2,
-                    paddingTop: 20,
+                    paddingTop: 15,
                     paddingLeft: 10,
                     paddingRight: 10,
                     marginBottom: 2
@@ -57,9 +58,9 @@ const CardCustum = (props) => {
                         }}
                     >
                         <Icon name="room" color={color.primary} />
-                        <Text>1 rue de la gare</Text><Text style={{ color: 'red' }} >(1.2KM)</Text>
+                        <Text>1 rue de la gare</Text><Text style={{ color: 'red' }} > (1.2KM) </Text>
                     </View>
-                    <Text style={{ fontSize: 10, paddingLeft: 40 }}>Paris(75000)</Text>
+                    <Text style={{ fontSize: 10, paddingLeft: 40 }}>Paris (75000) </Text>
                 </View>
                 <View
                     style={{
@@ -83,6 +84,7 @@ const CardCustum = (props) => {
                                 alignItems: 'center',
                                 justifyContent: 'center',
                                 borderRadius: 15,
+                                paddingTop: -3
                             }}
                         >
                         <Text
