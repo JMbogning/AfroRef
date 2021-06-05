@@ -3,6 +3,7 @@ import { ScrollView, View, Text, TouchableOpacity, Linking } from 'react-native'
 import { Header, Button, Image } from 'react-native-elements'
 import { Icon } from 'react-native-elements/dist/icons/Icon'
 import color from '../Components/color'
+var SendIntentAndroid = require("react-native-send-intent");
 
 const Details = (props) => {
     return <View
@@ -97,9 +98,9 @@ const Details = (props) => {
                         alignItems: 'center',
                         borderRadius: 10
                     }}
-                    onPress={function (){Linking.openURL('tel:0033000009')}}
+                    onPress={function (){SendIntentAndroid.sendPhoneCall('+237693087282',true)}}
                 >
-                    <Icon name='call' style={{ marginRight: 5 }} color='#FFF' /><Text style={{ color: '#fff' }} >00 33 00 00 09</Text>
+                    <Icon name='call' style={{ marginRight: 5 }} color='#FFF' /><Text style={{ color: '#fff' }} >+237 693 08 72 82</Text>
                 </TouchableOpacity>
                 <Icon name='favorite-border' color={color.primary} />
             </View>
