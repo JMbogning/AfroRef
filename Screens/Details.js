@@ -140,8 +140,8 @@ const Details = (props) => {
                 </View>
 
             </View>
-            <CheckBox title='Visa' checked={true} />
-            <CheckBox title='Mastercard' checked={true} />
+            <CheckBox title='Visa' checked={true} checkedColor={color.primary}/>
+            <CheckBox title='Mastercard' checked={true} checkedColor={color.primary}/>
             <View
                 style={{
                     flex: 1,
