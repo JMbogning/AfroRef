@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import { Icon } from 'react-native-elements';
@@ -10,72 +10,61 @@ import color from '../Components/color'
 import { createDrawerNavigator } from '@react-navigation/drawer'
 import Content from '../Components/DrawerNavigation';
 import Login from './Login';
-import { createStackNavigator } from '@react-navigation/stack';
 
 const Tab = createBottomTabNavigator();
 const Drawer = createDrawerNavigator()
-const Stak = createStackNavigator()
 
-class TabNav extends React.Component{
-    constructor(props){
-        super(props)
-        
-    }
-   
-    render(){
-        return <Tab.Navigator
-        tabBarOptions={{
-            activeTintColor: color.primary
-        }}
-        {...this.props}
-        >
-        <Tab.Screen name={'Home'} component={Pricipal} options={{
-            tabBarIcon: (props) => <Icon name={'home'}
-                color={props.color}
-            />
-        }} />
-        <Tab.Screen name={'Map'} component={Mape} options={{
-            tabBarIcon: (props) => <Icon name={'room'}
-                color={props.color}
-            />
-        }} />
-        <Tab.Screen name={'Favorite'} component={Favoris} options={{
-            tabBarIcon: (props) => <Icon name={'favorite'}
-                color={props.color}
-            />
-        }} />
-        <Tab.Screen name={'Add'} component={Add} options={{
-            tabBarIcon: (props) => <Icon name={'add-circle'}
-                color={props.color}
-            />
-        }} />
-        </Tab.Navigator>
-    }
-}
+const TabNav = (props) => <Tab.Navigator
+    tabBarOptions={{
+        activeTintColor: color.primary
+    }}
+    {...props}
+>
+    <Tab.Screen name={'Home'} component={Pricipal} options={{
+        tabBarIcon: (props) => <Icon name={'home'}
+            color={props.color}
+        />
+    }} />
+    <Tab.Screen name={'Map'} component={Mape} options={{
+        tabBarIcon: (props) => <Icon name={'room'}
+            color={props.color}
+        />
+    }} />
+    <Tab.Screen name={'Favorite'} component={Favoris} options={{
+        tabBarIcon: (props) => <Icon name={'favorite'}
+            color={props.color}
+        />
+    }} />
+    <Tab.Screen name={'Add'} component={Add} options={{
+        tabBarIcon: (props) => <Icon name={'add-circle'}
+            color={props.color}
+        />
+    }} />
+</Tab.Navigator>
 
 export default class Main extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            islog: false
+            isLog: false,
+
         }
 
-        this.setIsLog = this.setIsLog.bind(this)
+        this.changeLog = this.changeLog.bind(this)
     }
-  
-    setIsLog(){
-        this.setState({isLog: true})
-        console.log(this.state.isLog)
 
+    changeLog(val) {
+        this.setState({ isLog: true })
+       // this.render()
+        console.log(this.state.isLog)
     }
 
     render() {
-
-        return (  this.state.islog ? <Drawer.Navigator
-            drawerContent={(p)=><Content {...p} />}
+        return (this.state.isLog?<Drawer.Navigator
+            drawerContent={(props)=><Content {...props} />}
         >
             <Drawer.Screen name="Main" component={TabNav} />
-        </Drawer.Navigator>:<Login setLog={this.setIsLog}/>)
+        </Drawer.Navigator>:<Login setLog={this.changeLog}/>)
     }
 }
 
