@@ -47,7 +47,8 @@ export default class Login extends React.Component {
                         borderRadius:10
                     }}
                     onPress={()=>{
-                        this.props.navigation.navigate('Home',{'log':true})
+                        this.props.setLog(true)
+                        //this.props.navigation.navigate('Home',{'log':true})
                     }}
                     />
                     <Text
