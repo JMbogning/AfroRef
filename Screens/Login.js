@@ -13,7 +13,7 @@ export default class Login extends React.Component {
                 }}
             >
                 <Header
-                    centerComponent={'Login'}
+                    centerComponent={<Text style={{color:"#FFF",fontWeight:'bold'}}>Login</Text>}
                     backgroundColor={color.primary}
                 />
                 <ScrollView
