@@ -1,6 +1,6 @@
 import React from 'react'
 import { ScrollView, View, Text, TouchableOpacity, Linking } from 'react-native'
-import { Header, Button, Image } from 'react-native-elements'
+import { Header, Button, Image, CheckBox } from 'react-native-elements'
 import { Icon } from 'react-native-elements/dist/icons/Icon'
 import color from '../Components/color'
 var SendIntentAndroid = require("react-native-send-intent");
@@ -13,7 +13,7 @@ const Details = (props) => {
     >
         <Header
             //leftComponent={{ icon: 'arrow-back', color: '#fff' }}
-            leftComponent={<Icon name='arrow-back' color='#fff' onPress={()=>{props.navigation.goBack()}} />}
+            leftComponent={<Icon name='arrow-back' color='#fff' onPress={() => { props.navigation.goBack() }} />}
             centerComponent={{ text: 'Restaurant le salut -Details', style: { color: '#fff' } }}
             containerStyle={{
                 backgroundColor: color.primary,
@@ -26,7 +26,7 @@ const Details = (props) => {
                 paddingTop: 15,
                 paddingLeft: 15,
                 paddingRight: 15,
-                
+
             }}
         >
             <Text
@@ -98,7 +98,7 @@ const Details = (props) => {
                         alignItems: 'center',
                         borderRadius: 10
                     }}
-                    onPress={function (){SendIntentAndroid.sendPhoneCall('+237693087282',true)}}
+                    onPress={function () { SendIntentAndroid.sendPhoneCall('+237693087282', true) }}
                 >
                     <Icon name='call' style={{ marginRight: 5 }} color='#FFF' /><Text style={{ color: '#fff' }} >+237 693 08 72 82</Text>
                 </TouchableOpacity>
@@ -140,7 +140,8 @@ const Details = (props) => {
                 </View>
 
             </View>
-            <Text>#visa #Mastercard</Text>
+            <CheckBox title='Visa' checked={true} />
+            <CheckBox title='Mastercard' checked={true} />
             <View
                 style={{
                     flex: 1,
@@ -157,7 +158,7 @@ const Details = (props) => {
                         justifyContent: 'center',
                         alignItems: 'center',
                         borderRadius: 10,
-                        marginBottom:20
+                        marginBottom: 20
                     }}
                 >
                     <Text style={{ color: '#fff', fontWeight: 'bold' }} >Plat Gastronomique</Text>
