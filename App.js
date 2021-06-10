@@ -55,7 +55,7 @@ class App extends React.Component {
       <NavigationContainer>
      
       {
-         this.state.first ? <Main />:<Step setLog ={this.setLog}/>
+         this.state.first ? <Main {...this.props}/>:<Step setLog ={this.setLog}/>
       }
       </NavigationContainer>
     </SafeAreaProvider>

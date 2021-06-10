@@ -11,7 +11,19 @@ export default class ForgottenPassword extends React.Component {
     
     render() {
         return (
-            <Text>Formulaire de rénitialisation</Text>
+            <View
+            style={{
+                flex:1,
+                alignContent:'center',
+                alignItems:'center'
+            }}
+            >
+                <Text>Formulaire de rénitialisation</Text>
+                <Text>Formulaire de rénitialisation</Text>
+                <Text>Formulaire de rénitialisation</Text>
+                <Text>Formulaire de rénitialisation</Text>
+                <Text>Formulaire de rénitialisation</Text>
+            </View>
         );
     }
 }

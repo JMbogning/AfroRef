@@ -59,14 +59,20 @@ export default class Login extends React.Component {
                     }}
                     />
                     </TouchableOpacity>
-                    <Text
+                   <TouchableOpacity
+                    onPress={ event => {
+                        console.log(this.props.navigation.navigate("ForgottenPassword"))
+                    }} 
+                   >
+                   <Text
                     style={{
                         textAlign: 'right',
                         margin:10,
                         color:'grey'
                     }}
-                    onPress={() => this.props.navigate('FogottenPassword')} 
+                   
                     >Mot de passe oublier ?</Text>
+                   </TouchableOpacity>
                     <Text
                     style={{
                         marginTop:30

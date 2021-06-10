@@ -10,10 +10,13 @@ import { createDrawerNavigator } from '@react-navigation/drawer'
 import Content from '../Components/DrawerNavigation';
 import Login from './Login';
 import PointInteret from './PointInteret';
+import { createStackNavigator } from '@react-navigation/stack';
+import ForgottenPassword from './ForgottenPassword';
 
 
 const Tab = createBottomTabNavigator();
 const Drawer = createDrawerNavigator();
+const Stack = createStackNavigator()
 
 const TabNav = (props) => <Tab.Navigator
     tabBarOptions={{
@@ -46,7 +49,9 @@ const TabNav = (props) => <Tab.Navigator
     }} />
 </Tab.Navigator>
 
-export default class Main extends React.Component {
+
+
+ class DrawerComponent extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
@@ -73,7 +78,21 @@ export default class Main extends React.Component {
         >
             <Drawer.Screen name="Main" component={TabNav} />
             <Drawer.Screen name="PointInteret" component={PointInteret} />
-        </Drawer.Navigator>:<Login setLog={(val)=>this.changeLog(val)}/>)
+        </Drawer.Navigator>:<Login setLog={(val)=>this.changeLog(val)} {...this.props}/>)
     }
 }
 
+export default class Main extends React.Component {
+
+    render(){
+        return(
+            <Stack.Navigator
+            headerMode={'none'}
+            >
+                <Stack.Screen name='DrawerComponent' component={DrawerComponent}/>
+                <Stack.Screen name='ForgottenPassword' component={ForgottenPassword} />
+            </Stack.Navigator>
+        )
+    }
+
+}
