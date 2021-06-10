@@ -36,8 +36,18 @@ export default class Register extends React.Component {
                         }}
                     />
                     <Input
-                        placeholder="Veuillez entrer votre nom d'utilisateur"
+                        placeholder="Veuillez entrer votre nom"
                         leftIcon={{ type: 'material', name: 'person' }}
+                        rightIcon={{ type: 'material', name: 'done', color: color.primary }}
+                    />
+                    <Input
+                        placeholder="Veuillez entrer votre prenom"
+                        leftIcon={{ type: 'material', name: 'person' }}
+                        rightIcon={{ type: 'material', name: 'done', color: color.primary }}
+                    />
+                    <Input
+                        placeholder="Veuillez entrer votre email"
+                        leftIcon={{ type: 'material', name: 'email' }}
                         rightIcon={{ type: 'material', name: 'done', color: color.primary }}
                     />
                     <Input
@@ -46,38 +56,26 @@ export default class Register extends React.Component {
                         rightIcon={{ type: 'material', name: 'done', color: color.primary }}
                         secureTextEntry={true}
                     />
+                    <Input
+                        placeholder="entrer à nouveau votre mot de passe"
+                        leftIcon={{ type: 'material', name: 'lock' }}
+                        rightIcon={{ type: 'material', name: 'done', color: color.primary }}
+                        secureTextEntry={true}
+                    />
                     <TouchableOpacity>
                     <Button
-                    title='Connexion'
+                    title='Valider'
                     buttonStyle={{
                         backgroundColor:color.primary,
                         borderRadius:10
                     }}
-                    onPress={()=>{
-                        this.props.setLog(true)
+                    //onPress={()=>{
+                        //this.props.setLog(false)
                         //this.props.navigation.navigate('Home',{'log':true})
-                    }}
+                    //}}
                     />
                     </TouchableOpacity>
-                   <TouchableOpacity
-                    onPress={ event => {
-                        console.log(this.props.navigation.navigate("ForgottenPassword"))
-                    }} 
-                   >
-                   <Text
-                    style={{
-                        textAlign: 'right',
-                        margin:10,
-                        color:'grey'
-                    }}
-                   
-                    >Mot de passe oublier ?</Text>
-                   </TouchableOpacity>
-                    <Text
-                    style={{
-                        marginTop:30
-                    }}
-                    >Pas encore de compte ?<Text style={{color:color.primary}} > Inscrivez-vous</Text></Text>
+                    
                 </ScrollView>
             </View>
         );

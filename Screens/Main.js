@@ -12,6 +12,7 @@ import Login from './Login';
 import PointInteret from './PointInteret';
 import { createStackNavigator } from '@react-navigation/stack';
 import ForgottenPassword from './ForgottenPassword';
+import Register from './Register';
 
 
 const Tab = createBottomTabNavigator();
@@ -91,6 +92,7 @@ export default class Main extends React.Component {
             >
                 <Stack.Screen name='DrawerComponent' component={DrawerComponent}/>
                 <Stack.Screen name='ForgottenPassword' component={ForgottenPassword} />
+                <Stack.Screen name='Register' component={Register} />
             </Stack.Navigator>
         )
     }

@@ -4,8 +4,8 @@ import Details from './Details';
 import Home from './Home';
 import ChercheResult from './ChercheResults';
 import ForgottenPassword from './ForgottenPassword';
+import Register from './Register';
 import Login from './Login';
-import Register from './register';
 
 const Stack = createStackNavigator();
 const Principal = () => {

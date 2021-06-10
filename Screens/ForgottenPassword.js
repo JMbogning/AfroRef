@@ -46,10 +46,10 @@ export default class ForgottenPassword extends React.Component {
                         backgroundColor:color.primary,
                         borderRadius:10
                     }}
-                    onPress={()=>{
-                        this.props.setLog(true)
+                    //onPress={()=>{
+                        //this.props.setLog(true)
                         //this.props.navigation.navigate('Home',{'log':true})
-                    }}
+                    //}}
                     />
                     </TouchableOpacity>
                 </ScrollView>
