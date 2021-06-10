@@ -123,8 +123,8 @@ const Add = (props) => {
             <View style={{
                 flex: 1,
                 flexDirection: 'row',
-                justifyContent: 'space-around',
-                marginBottom: 10
+                marginBottom: 10,
+                flexWrap:'wrap'
             }}>
                 <CheckBox title='Visa' checked={false} checkedColor={color.primary}/>
                 <CheckBox title='Mastercard' checked={true} checkedColor={color.primary}/>
