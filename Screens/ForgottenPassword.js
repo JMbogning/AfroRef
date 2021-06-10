@@ -11,7 +11,7 @@ export default class ForgottenPassword extends React.Component {
     
     render() {
         return (
-            <p>Formulaire de rénitialisation</p>
+            <Text>Formulaire de rénitialisation</Text>
         );
     }
 }
