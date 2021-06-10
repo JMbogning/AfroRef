@@ -7,7 +7,7 @@ const DrawerCustumContent = ()=>(
         }}
     >
         <Image 
-        source={ require('../assets/img1.jpg') }
+        source={require('../assets/img1.jpg')}
         style={{
             width: 150,
             height: 150,

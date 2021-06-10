@@ -9,16 +9,9 @@ import SavePI from '../Components/SavePi'
 export default class Home extends React.Component {
     constructor(props){
         super(props)
+        this.inputRef = React.createRef()
         this.state = {
-            search: '',
-            islog: false
-        }
-    }
-
-    componentDidMount(){
-        //console.log(this.props)
-        if (!this.state.islog) {
-          this.props.navigation.navigate("login")
+            search: ''
         }
     }
 
@@ -50,8 +43,9 @@ export default class Home extends React.Component {
                     backgroundColor: '#fff',
                 }}
                 placeholder={'Rechercher'}
-                value={this.state.search}
-                onChange={(value)=>{this.setState({search:value})}}
+                ref={this.inputRef}
+                onSubmitEditing={ev=>{}}
+                onChange={(e)=>{console.log(this.inputRef.current)}}
             />
 
            <ScrollView

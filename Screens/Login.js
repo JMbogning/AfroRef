@@ -5,6 +5,9 @@ import { Image, Header, Input, Button } from 'react-native-elements'
 import color from '../Components/color';
 
 export default class Login extends React.Component {
+    constructor(props){
+        super(props)
+    }
     render() {
         return (
             <View

@@ -56,15 +56,15 @@ export default class Main extends React.Component {
     changeLog(val) {
         this.setState({ isLog: true })
        // this.render()
-        console.log(this.state.isLog)
     }
 
     render() {
+        console.log(this.state.isLog)
         return (this.state.isLog?<Drawer.Navigator
             drawerContent={(props)=><Content {...props} />}
         >
             <Drawer.Screen name="Main" component={TabNav} />
-        </Drawer.Navigator>:<Login setLog={this.changeLog}/>)
+        </Drawer.Navigator>:<Login setLog={(val)=>this.changeLog(val)}/>)
     }
 }
 
