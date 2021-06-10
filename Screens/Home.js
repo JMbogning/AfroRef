@@ -1,5 +1,5 @@
 import React from 'react'
-import {  ScrollView, View } from 'react-native'
+import { ScrollView, View } from 'react-native'
 import { Header, SearchBar, Image } from 'react-native-elements'
 import { Icon } from 'react-native-elements/dist/icons/Icon'
 import color from '../Components/color'
@@ -7,15 +7,23 @@ import SavePI from '../Components/SavePi'
 
 
 export default class Home extends React.Component {
-    constructor(props){
+    constructor(props) {
         super(props)
-        this.inputRef = React.createRef()
+        this._changeSearch = this._changeSearch.bind(this)
+        this._searchSubmit = this._searchSubmit.bind(this)
         this.state = {
             search: ''
         }
     }
-
-    render(){
+    _changeSearch(val) {
+        this.setState({ search: val })
+    }
+    _searchSubmit(text){
+        this.props.navigation.navigate("Result",{
+            text
+        })
+    }
+    render() {
         return (<View style={{ backgroundColor: color.bacground, flex: 1 }}>
             <Header
                 statusBarProps={{ backgroundColor: color.primary }}
@@ -24,7 +32,7 @@ export default class Home extends React.Component {
                     backgroundColor: color.primary,
                     justifyContent: 'space-around',
                 }}
-                leftComponent={<Icon name='menu' color='#fff'  onPress={()=>{this.props.navigation.toggleDrawer()}}  />}
+                leftComponent={<Icon name='menu' color='#fff' onPress={() => { this.props.navigation.toggleDrawer() }} />}
                 centerComponent={{ text: 'Accueil', style: { color: '#fff' } }}
                 rightComponent={<Image source={require('../assets/logo.png')}
                     style={{
@@ -44,18 +52,21 @@ export default class Home extends React.Component {
                 }}
                 placeholder={'Rechercher'}
                 ref={this.inputRef}
-                onSubmitEditing={ev=>{}}
-                onChange={(e)=>{console.log(this.inputRef.current)}}
+                onChange={(e) => this._changeSearch(e)}
+                value={this.state.search}
+                onSubmitEditing={event=>{
+                this._searchSubmit( event.nativeEvent.text )   
+                }}
             />
 
-           <ScrollView
-           style={{
-               flex:1,
-           }}
-           >
-               <SavePI {...this.props} />
-               <SavePI {...this.props}/>
-           </ScrollView>
+            <ScrollView
+                style={{
+                    flex: 1,
+                }}
+            >
+                <SavePI {...this.props} />
+                <SavePI {...this.props} />
+            </ScrollView>
         </View>)
 
     }

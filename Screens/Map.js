@@ -7,11 +7,16 @@ import color from '../Components/color'
 export default class Mape extends React.Component{
     constructor(props){
         super(props)
+        this._searchSubmit = this._searchSubmit.bind(this)
         this.state ={
             search:''
         }
     }
-
+    _searchSubmit(text){
+        this.props.navigation.navigate("Result",{
+            text
+        })
+    }
     render(){
         return (<View style={{ 
             flex:1,
@@ -45,6 +50,9 @@ export default class Mape extends React.Component{
                     placeholder={'Rechercher'}
                     value={this.state.search}
                     onChange={(value)=>{this.setState({search:value})}}
+                    onSubmitEditing={event=>{
+                        this._searchSubmit( event.nativeEvent.text )   
+                        }}
                 />
                 <View
                 style={{
