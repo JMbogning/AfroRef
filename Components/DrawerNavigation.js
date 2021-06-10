@@ -95,7 +95,6 @@ class Content extends React.Component {
                     activeBackgroundColor={color.primary}
                     activeTintColor='#fff'
                     focused={this.state.activeHome}
-                    col
                 />
 
                 <DrawerItem

@@ -1,7 +1,7 @@
 import React from 'react'
 import { ScrollView, Text, View } from 'react-native'
-import { Input, Header, Image, Icon, Button } from 'react-native-elements'
-import color from '../Components/color'
+import { Input, Header, Image, Icon, Button, CheckBox } from 'react-native-elements'
+import color from '../Components/color' 
 
 const Add = (props) => {
     return (<View style={{
@@ -43,7 +43,7 @@ const Add = (props) => {
                 fontSize:15,
                 color: 'grey'
             }}
-            >Créer des point d'intéret pour que les autres utilisateurs de la plate forme puissent les retrouver facilement en quelque cliques</Text>
+            >Créer des points d'intéret pour que les autres utilisateurs de la plate forme puissent les retrouver facilement en quelque cliques</Text>
             <Input
                 placeholder="Nom"
                 leftIcon={{ type: 'material', name: 'person' }}
@@ -99,14 +99,151 @@ const Add = (props) => {
                     height:80
                 }}
             />
-            <Input
-                placeholder="Localisation"
-                leftIcon={{ type: 'material', name: 'where-to-vote' }}
-                rightIcon={{ type: 'material', name: 'done', color:color.primary }}
-            />
-            <Button buttonStyle= {{ backgroundColor: color.primary }}
-                title="Valider"
-            />
+           <View
+                style={{
+                    flex: 1,
+                    flexDirection: 'row'
+                }}
+            >
+                <View
+                    style={{
+                        flex: 1 / 2,
+                        flexDirection: 'row',
+                        backgroundColor: color.primary,
+                        height: 30,
+                        justifyContent: 'center',
+                        alignItems: 'center',
+                        borderRadius: 10,
+                        marginBottom: 10
+                    }}
+                >
+                    <Text style={{ color: '#fff', fontWeight: 'bold' }} >Moyen de paiement</Text>
+                </View>
+            </View>
+            <View style={{
+                flex: 1,
+                flexDirection: 'row',
+                justifyContent: 'space-around',
+                marginBottom: 10
+            }}>
+                <CheckBox title='Visa' checked={false} checkedColor={color.primary}/>
+                <CheckBox title='Mastercard' checked={true} checkedColor={color.primary}/>
+                <CheckBox title ='Ticket restaurant' checked={false} checkedColor={color.primary} />
+
+            </View>
+
+            <View
+                style={{
+                    flex: 1,
+                    flexDirection: 'row'
+                }}
+            >
+                <View
+                    style={{
+                        flex: 1 / 2,
+                        flexDirection: 'row',
+                        backgroundColor: color.primary,
+                        height: 30,
+                        justifyContent: 'center',
+                        alignItems: 'center',
+                        borderRadius: 10,
+                        marginBottom: 10
+                    }}
+                >
+                    <Text style={{ color: '#fff', fontWeight: 'bold' }} >Type de plat</Text>
+                </View>
+            </View>
+            <View style={{
+                flex: 1,
+                flexDirection: 'row',
+                justifyContent: 'space-around',
+                marginBottom: 10
+            }}>
+                <CheckBox title='Camerounais' checked={true} checkedColor={color.primary}/>
+                <CheckBox title='Sénégalais' checked={false} checkedColor={color.primary}/>
+                <CheckBox title ='Togolais' checked={false} checkedColor={color.primary} />
+
+            </View>
+
+            <View
+                style={{
+                    flex: 1,
+                    flexDirection: 'row'
+                }}
+            >
+                <View
+                    style={{
+                        flex: 1 / 2,
+                        flexDirection: 'row',
+                        backgroundColor: color.primary,
+                        height: 30,
+                        justifyContent: 'center',
+                        alignItems: 'center',
+                        borderRadius: 10,
+                        marginBottom: 10
+                    }}
+                >
+                    <Text style={{ color: '#fff', fontWeight: 'bold' }} >Heure d'ouverture</Text>
+                </View>
+            </View>
+            <View style={{
+                flex: 1,
+                flexDirection: 'row',
+                justifyContent: 'space-between',
+                marginBottom: 10
+            }}>
+                <CheckBox title='8h00 - 12h00' checked={false} checkedColor={color.primary}/>
+                <CheckBox title='16h00 - 20h00' checked={true} checkedColor={color.primary}/>
+
+            </View>
+
+            <View
+                style={{
+                    flex: 1,
+                    flexDirection: 'row',
+                    justifyContent: 'space-between'
+                }}
+            >
+                <View
+                    style={{
+                        flex: 1 / 2,
+                        flexDirection: 'row',
+                        backgroundColor: color.primary,
+                        height: 30,
+                        justifyContent: 'center',
+                        alignItems: 'center',
+                        borderRadius: 10,
+                        marginBottom: 10
+                    }}
+                >
+                    <Text style={{ color: '#fff', fontWeight: 'bold' }} >Jour d'ouverture</Text>
+                </View>
+            </View>
+            <View style={{
+                flex: 1,
+                flexDirection: 'row',
+                marginBottom: 10
+            }}>
+                <CheckBox title='Mardi à Samedi' checked={true} checkedColor={color.primary}/>
+            </View>
+
+            <View style={{
+                flex: 1,
+                flexDirection: 'row',
+                justifyContent: 'space-between'
+            }} >
+                <Button buttonStyle= {{ 
+                    backgroundColor: color.primary,
+                    width: 100
+                    }} title="Valider" />
+
+                <Button buttonStyle= {{ 
+                    backgroundColor: color.red,
+                    width: 100
+                    }} title="Annuler" />
+            </View>
+            
+            
         </ScrollView>
     </View>)
 
