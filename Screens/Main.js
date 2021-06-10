@@ -56,17 +56,21 @@ export default class Main extends React.Component {
         }
 
         this.changeLog = this.changeLog.bind(this)
+        this.logout = this.logout.bind(this)
     }
 
     changeLog(val) {
         this.setState({ isLog: true })
        // this.render()
     }
+    logout(){
+        this.setState({ isLog: false })
+    }
 
     render() {
         console.log(this.state.isLog)
         return (this.state.isLog?<Drawer.Navigator
-            drawerContent={(props)=><Content {...props} />}
+            drawerContent={(props)=><Content {...props} logout={this.logout}/>}
         >
             <Drawer.Screen name="Main" component={TabNav} />
             <Drawer.Screen name="PointInteret" component={PointInteret} />

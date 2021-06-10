@@ -142,7 +142,7 @@ class Content extends React.Component {
                 <DrawerItem
                     label="Deconnexion"
                     icon={({ color, size }) => <Icon name='logout' color={color} size={size} />}
-                    onPress={() => { this.props.navigation.navigate('Logout'); this.activeLogout() }}
+                    onPress={() => { this.props.logout(); this.activeLogout() }}
                     activeBackgroundColor={color.primary}
                     activeTintColor='#fff'
                     focused={this.state.activeLogout}
