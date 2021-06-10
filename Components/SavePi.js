@@ -1,10 +1,11 @@
 import React from 'react'
 import { Text, View, ScrollView } from 'react-native'
 import CardCustum from './CardCustum'
+
 const SavePI = (props)=> <View
-style={{
-    flex: 2 /3 
-}}
+    style={{
+        flex: 2 /3 
+    }}
 >
 <Text
     style={{

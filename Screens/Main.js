@@ -1,5 +1,4 @@
 import React from 'react'
-import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import { Icon } from 'react-native-elements';
 import Pricipal from './Principal';
@@ -11,10 +10,10 @@ import { createDrawerNavigator } from '@react-navigation/drawer'
 import Content from '../Components/DrawerNavigation';
 import Login from './Login';
 import PointInteret from './PointInteret';
-import Logout from './Logout';
+
 
 const Tab = createBottomTabNavigator();
-const Drawer = createDrawerNavigator()
+const Drawer = createDrawerNavigator();
 
 const TabNav = (props) => <Tab.Navigator
     tabBarOptions={{
@@ -74,7 +73,6 @@ export default class Main extends React.Component {
         >
             <Drawer.Screen name="Main" component={TabNav} />
             <Drawer.Screen name="PointInteret" component={PointInteret} />
-            <Drawer.Screen name="Logout" component={Logout} />
         </Drawer.Navigator>:<Login setLog={(val)=>this.changeLog(val)}/>)
     }
 }

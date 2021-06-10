@@ -1,14 +1,16 @@
-import { useNavigation } from '@react-navigation/core';
 import React from 'react'
 import { TouchableOpacity } from 'react-native';
 import { ScrollView, View, Text } from 'react-native'
 import { Image, Header, Input, Button } from 'react-native-elements'
-import color from '../Components/color';
+import color from '../Components/color'
+
+
 
 export default class Login extends React.Component {
     constructor(props){
         super(props)
     }
+    
     render() {
         return (
             <View
@@ -63,6 +65,7 @@ export default class Login extends React.Component {
                         margin:10,
                         color:'grey'
                     }}
+                    onPress={() => this.props.navigate('FogottenPassword')} 
                     >Mot de passe oublier ?</Text>
                     <Text
                     style={{
