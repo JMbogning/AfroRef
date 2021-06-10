@@ -6,7 +6,7 @@ import color from '../Components/color'
 
 
 
-export default class Login extends React.Component {
+export default class Register extends React.Component {
     constructor(props){
         super(props)
     }
@@ -19,7 +19,7 @@ export default class Login extends React.Component {
                 }}
             >
                 <Header
-                    centerComponent={<Text style={{color:"#FFF",fontWeight:'bold'}}>Connexion</Text>}
+                    centerComponent={<Text style={{color:"#FFF",fontWeight:'bold'}}>Inscription</Text>}
                     backgroundColor={color.primary}
                 />
                 <ScrollView
@@ -73,16 +73,11 @@ export default class Login extends React.Component {
                    
                     >Mot de passe oublier ?</Text>
                    </TouchableOpacity>
-
-                   <TouchableOpacity onPress={ event => {
-                        console.log(this.props.navigation.navigate("Register"))
-                    }} >
                     <Text
-                        style={{
-                            marginTop:30
-                        }}
-                        >Pas encore de compte ?<Text style={{color:color.primary}} > Inscrivez-vous</Text></Text>
-                   </TouchableOpacity>
+                    style={{
+                        marginTop:30
+                    }}
+                    >Pas encore de compte ?<Text style={{color:color.primary}} > Inscrivez-vous</Text></Text>
                 </ScrollView>
             </View>
         );

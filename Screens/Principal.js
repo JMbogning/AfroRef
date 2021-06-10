@@ -4,6 +4,9 @@ import Details from './Details';
 import Home from './Home';
 import ChercheResult from './ChercheResults';
 import ForgottenPassword from './ForgottenPassword';
+import Login from './Login';
+import Register from './register';
+
 const Stack = createStackNavigator();
 const Principal = () => {
     return (
@@ -15,6 +18,7 @@ const Principal = () => {
                 <Stack.Screen name="Details" component={Details} />
                 <Stack.Screen name="Result" component={ChercheResult} />
                 <Stack.Screen name="ForgottenPassword" component={ForgottenPassword} />
+                <Stack.Screen name="Register" component={Register} />
             </Stack.Navigator>
     );
 
