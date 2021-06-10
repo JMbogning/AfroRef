@@ -1,58 +1,73 @@
 import React from 'react'
 import { View } from 'react-native'
-import { Icon, Image, Text } from 'react-native-elements'
-import { DrawerContentScrollView, DrawerItem, DrawerItemList } from '@react-navigation/drawer'
+import { Icon, Image, Text, Divider } from 'react-native-elements'
+import { DrawerContentScrollView, DrawerItem } from '@react-navigation/drawer'
 import color from './color'
-import { TouchableOpacity } from 'react-native'
 
 class Content extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
             activeHome: true,
-            activeMap: false,
-            activeFavorit: false,
-            activeAdd: false
+            activeFavorite: false,
+            activeSearch: false,
+            activePointInteret: false,
+            activeLogout: false
         }
 
         this.activeHome = this.activeHome.bind(this)
-        this.activeAdd = this.activeAdd.bind(this)
-        this.activeMap = this.activeMap.bind(this)
-        this.activeFavorit = this.activeFavorit.bind(this)
+        this.activeFavorite = this.activeFavorite.bind(this)
+        this.activeSearch = this.activeSearch.bind(this)
+        this.activePointInteret = this.activePointInteret.bind(this)
+        this.activeLogout = this.activeLogout.bind(this)
 
     }
 
     activeHome() {
         this.setState({
             activeHome: true,
-            activeMap: false,
-            activeFavorit: false,
-            activeAdd: false
+            activeFavorite: false,
+            activeSearch: false,
+            activePointInteret: false,
+            activeLogout: true
         })
 
     }
-    activeMap() {
+    activeFavorite() {
         this.setState({
             activeHome: false,
-            activeMap: true,
-            activeFavorit: false,
-            activeAdd: false
+            activeFavorite: true,
+            activeSearch: false,
+            activePointInteret: false,
+            activeLogout: true
         })
     }
-    activeFavorit() {
+    activeSearch() {
         this.setState({
             activeHome: false,
-            activeMap: false,
-            activeFavorit: true,
-            activeAdd: false
+            activeFavorite: false,
+            activeSearch: true,
+            activePointInteret: false,
+            activeLogout: false
         })
     }
-    activeAdd() {
+    activePointInteret() {
         this.setState({
             activeHome: false,
-            activeMap: false,
-            activeFavorit: false,
-            activeAdd: true
+            activeFavorite: false,
+            activeSearch: false,
+            activePointInteret: true,
+            activeLogout: false
+        })
+    }
+    activeLogout() {
+        this.setState({
+            activeHome: false,
+            activeFavorite: false,
+            activeSearch: false,
+            activePointInteret: false,
+            activeLogout: true
+
         })
     }
 
@@ -89,7 +104,7 @@ class Content extends React.Component {
                     >janet@jackson.com</Text>
                 </View>
                 <DrawerItem
-                    label='home'
+                    label='Accueil'
                     icon={({ color, size }) => <Icon name='home' color={color} size={size} />}
                     onPress={() => { this.props.navigation.navigate('Home'); this.activeHome() }}
                     activeBackgroundColor={color.primary}
@@ -98,29 +113,39 @@ class Content extends React.Component {
                 />
 
                 <DrawerItem
-                    label='Map'
-                    icon={({ color, size }) => <Icon name='room' color={color} size={size} />}
-                    onPress={() => { this.props.navigation.navigate('Map'); this.activeMap() }}
+                    label='Mes favoris'
+                    icon={({ color, size }) => <Icon name='favorite' color={color} size={size} />}
+                    onPress={() => { this.props.navigation.navigate('Favorite'); this.activeFavorite() }}
                     activeBackgroundColor={color.primary}
                     activeTintColor='#fff'
-                    focused={this.state.activeMap}
+                    focused={this.state.activeFavorite}
                 />
                 <DrawerItem
-                    label='Favorite'
-                    icon={({ color, size }) => <Icon name='favorite' color={color} size={size} />}
-                    onPress={() => { this.props.navigation.navigate('Favorite'); this.activeFavorit() }}
+                    label="Rechercher un point d'interet"
+                    icon={({ color, size }) => <Icon name='search' color={color} size={size} />}
+                    onPress={() => { this.props.navigation.navigate('Home'); this.activeSearch() }}
                     activeBackgroundColor={color.primary}
                     activeTintColor='#fff'
-                    focused={this.state.activeFavorit}
+                    focused={this.state.activeSearch}
 
                 />
                 <DrawerItem
-                    label='Add'
-                    icon={({ color, size }) => <Icon name='add-circle' color={color} size={size} />}
-                    onPress={() => { this.props.navigation.navigate('Add'); this.activeAdd() }}
+                    label="Mes points d'interet"
+                    icon={({ color, size }) => <Icon name='star-rate' color={color} size={size} />}
+                    onPress={() => { this.props.navigation.navigate('PointInteret'); this.activePointInteret() }}
                     activeBackgroundColor={color.primary}
                     activeTintColor='#fff'
-                    focused={this.state.activeAdd}
+                    focused={this.state.activePointInteret}
+                />
+                <Divider  orientation = "horizontal" />
+
+                <DrawerItem
+                    label="Deconnexion"
+                    icon={({ color, size }) => <Icon name='logout' color={color} size={size} />}
+                    onPress={() => { this.props.navigation.navigate('Logout'); this.activeLogout() }}
+                    activeBackgroundColor={color.primary}
+                    activeTintColor='#fff'
+                    focused={this.state.activeLogout}
                 />
             </DrawerContentScrollView>
         )

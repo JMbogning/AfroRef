@@ -10,6 +10,8 @@ import color from '../Components/color'
 import { createDrawerNavigator } from '@react-navigation/drawer'
 import Content from '../Components/DrawerNavigation';
 import Login from './Login';
+import PointInteret from './PointInteret';
+import Logout from './Logout';
 
 const Tab = createBottomTabNavigator();
 const Drawer = createDrawerNavigator()
@@ -64,6 +66,8 @@ export default class Main extends React.Component {
             drawerContent={(props)=><Content {...props} />}
         >
             <Drawer.Screen name="Main" component={TabNav} />
+            <Drawer.Screen name="PointInteret" component={PointInteret} />
+            <Drawer.Screen name="Logout" component={Logout} />
         </Drawer.Navigator>:<Login setLog={(val)=>this.changeLog(val)}/>)
     }
 }
