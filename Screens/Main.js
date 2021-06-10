@@ -19,6 +19,9 @@ const TabNav = (props) => <Tab.Navigator
         activeTintColor: color.primary
     }}
     {...props}
+    sceneContainerStyle={{
+        flex:1
+    }}
 >
     <Tab.Screen name={'Home'} component={Pricipal} options={{
         tabBarIcon: (props) => <Icon name={'home'}
