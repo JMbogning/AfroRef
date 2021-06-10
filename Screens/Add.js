@@ -156,7 +156,7 @@ const Add = (props) => {
             <View style={{
                 flex: 1,
                 flexDirection: 'row',
-                justifyContent: 'space-around',
+                flexWrap:'wrap',
                 marginBottom: 10
             }}>
                 <CheckBox title='Camerounais' checked={true} checkedColor={color.primary}/>
