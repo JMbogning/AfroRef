@@ -1,3 +1,4 @@
+//Junior Mbogning 237694144521
 import React from 'react'
 import { Text, View } from 'react-native'
 import { Card, Icon } from 'react-native-elements'

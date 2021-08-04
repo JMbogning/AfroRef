@@ -1,3 +1,4 @@
+//Junior Mbogning 237694144521
 import React from 'react'
 import { ScrollView, Text, View } from 'react-native'
 import { Header, Icon, Image, SearchBar } from 'react-native-elements'

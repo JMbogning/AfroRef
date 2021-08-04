@@ -100,7 +100,7 @@ const Details = (props) => {
                     }}
                     onPress={function () { SendIntentAndroid.sendPhoneCall('+0000000000', true) }}
                 >
-                    <Icon name='call' style={{ marginRight: 5 }} color='#FFF' /><Text style={{ color: '#fff' }} >+237 693 08 72 82</Text>
+                    <Icon name='call' style={{ marginRight: 5 }} color='#FFF' /><Text style={{ color: '#fff' }} >+000000000000</Text>
                 </TouchableOpacity>
                 <Icon name='favorite-border' color={color.primary} />
             </View>

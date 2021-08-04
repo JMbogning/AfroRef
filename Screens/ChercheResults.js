@@ -1,3 +1,4 @@
+//Junior Mbogning 237694144521
 import React from 'react'
 import { ScrollView, Text } from 'react-native'
 import { Header, Icon, Image } from 'react-native-elements'
